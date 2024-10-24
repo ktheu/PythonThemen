@@ -383,6 +383,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wie-wir-funktionen-schreiben">Wie wir Funktionen schreiben</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lokale-und-globale-variablen">Lokale und globale Variablen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung">Zusammenfassung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aufgaben">Aufgaben</a></li>
 </ul>
             </nav>
         </div>
@@ -397,29 +398,31 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="funktionen">
 <h1>Funktionen<a class="headerlink" href="#funktionen" title="Link to this heading">#</a></h1>
 <p><a class="reference external" href="https://youtu.be/5qvqujyl90Q">Video</a></p>
-<p>In Funktionen fassen wir Codeabschnitte, die eine definierte Aufgabe erfüllen, zu einer Einheit zusammen. Wir erstellen Funktionen, damit wir diese Codeabschnitte testen und wiederverwenden können. Mit sprechenden Funktionsnamen werden die Programme, in denen wir die Funktionen aufrufen, besser lesbar.</p>
+<p>In Funktionen fassen wir Codeabschnitte, die eine definierte Aufgabe erfüllen, zu einer Einheit zusammen.
+Wir erstellen Funktionen weil</p>
+<ul class="simple">
+<li><p>wir einzelne Codeabschnitte besser testen können.</p></li>
+<li><p>mit sprechenden Funktionsnamen die Programme, in denen wir die Funktionen aufrufen, besser lesbar werden.</p></li>
+<li><p>wir die Codeabschnitte an anderen Stellen wiederverwenden können.</p></li>
+</ul>
 <p>Funktionen beginnen mit dem Schlüsselwort <strong>def</strong>. Sie haben</p>
 <ul class="simple">
 <li><p>einen Namen</p></li>
 <li><p>Parameter (0 oder mehr)</p></li>
-<li><p>einen docstring (optional, aber empfohlen)</p></li>
 <li><p>einen Funktionsrumpf</p></li>
-<li><p>mit <em>return</em> können Funktionen einen oder mehrere Werte zurückgeben. Fehlt <em>return</em> wird <em>None</em> zurückgegeben.</p></li>
+<li><p>return Anweisungen (0 oder mehr)</p></li>
 </ul>
+<p>Manchmal haben Funktionen einen <em>docstring</em>, der beschreibt, wie sie anzuwenden sind.</p>
 <section id="funktionen-ohne-return">
 <h2>Funktionen ohne return<a class="headerlink" href="#funktionen-ohne-return" title="Link to this heading">#</a></h2>
+<p>Mit return können Funktionen Werte zurückgeben. Kommen wir im Funktionsrumpf an eine return-Anweisung, dann wird die Funktion sofort verlassen. Wird die Funktion nicht über eine return Anweisung verlassen, dann gibt sie <em>None</em> zurück.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># die Funktion tut etwas, aber sie gibt nichts zurück</span>
 <span class="k">def</span> <span class="nf">sterne</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;*****&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sterne</span><span class="p">()</span>                <span class="c1"># die Funktion wird </span>
+
+<span class="n">sterne</span><span class="p">()</span>                <span class="c1"># die Funktion wird </span>
 <span class="n">sterne</span><span class="p">()</span>                <span class="c1"># zweimal aufgerufen</span>
 </pre></div>
 </div>
@@ -594,12 +597,12 @@ zeichen(k, s)
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">temperatur</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">temperatur</span><span class="p">(</span><span class="mi">45</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>kalt
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>heiß
 </pre></div>
 </div>
 </div>
@@ -628,7 +631,7 @@ zeichen(k, s)
 </section>
 <section id="wie-wir-funktionen-schreiben">
 <h2>Wie wir Funktionen schreiben<a class="headerlink" href="#wie-wir-funktionen-schreiben" title="Link to this heading">#</a></h2>
-<p><strong>Funktionen sollten alles, was sie für ihre Arbeit benötigen, über Parameter erhalten und alle Ergebnisse mittels return zurückgeben.</strong> Wir werden in der Regel keine input- oder print-Anweisungen innerhalb von Funktionen verwenden. (Ausnahme: Funktionen, deren alleiniger Zweck die Ein- oder Ausgabe ist).</p>
+<p>Für die meisten Fälle gilt: <strong>Funktionen sollten alles, was sie für ihre Arbeit benötigen, über Parameter erhalten und alle Ergebnisse mittels return zurückgeben.</strong> Wir werden in der Regel keine input- oder print-Anweisungen innerhalb von Funktionen verwenden. (Ausnahme: Funktionen, deren alleiniger Zweck die Ein- oder Ausgabe ist).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># SO NICHT:</span>
@@ -666,7 +669,8 @@ zeichen(k, s)
 
 <span class="n">a</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Bitte eine positive ganze Zahl eingeben: &#39;</span><span class="p">))</span>
 <span class="n">b</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Bitte noch eine positive ganze Zahl eingeben: &#39;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Der größte gemeinsame Teiler beider Zahlen ist </span><span class="si">{</span><span class="n">ggt</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">ggt</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Der größte gemeinsame Teiler beider Zahlen ist </span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -770,6 +774,192 @@ zeichen(k, s)
 <li><p>Mit return können wir mehrere Werte zurückgeben.</p></li>
 </ul>
 </section>
+<section id="aufgaben">
+<h2>Aufgaben<a class="headerlink" href="#aufgaben" title="Link to this heading">#</a></h2>
+<p>Bei den meisten Aufgaben sind nur der doc-String und Beispielaufrufe gegeben. Die Kopfzeile und der Rumpf der Funktion sollen ergänzt werden.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Aufgabe 1:  </span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="c1">#your code</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    returns: None,  Gibt die Zeichenfolge &#39;x.&#39; aus   </span>
+
+<span class="sd">    &gt;&gt;&gt; func1()</span>
+<span class="sd">    x.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="c1">#your code</span>
+ 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Aufgabe 2:  </span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="c1">#your code</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    returns: string, die Zeichenfolge &#39;x.&#39;</span>
+
+<span class="sd">    &gt;&gt;&gt; s = func2()</span>
+<span class="sd">    &gt;&gt;&gt; print(s)</span>
+<span class="sd">    x.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="c1">#your code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Aufgabe 3:  </span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="c1">#your code</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    k: int, k &gt; 0</span>
+<span class="sd">    returns: string, k-mal die Zeichenfolge &#39;.x&#39;</span>
+
+<span class="sd">    &gt;&gt;&gt; s = func3(5)</span>
+<span class="sd">    &gt;&gt;&gt; print(s)</span>
+<span class="sd">    x.x.x.x.x.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="c1">#your code</span>
+ 
+<span class="n">func3</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Aufgabe 4:  </span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="c1">#your code</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    k: int, k &gt; 0</span>
+<span class="sd">    c: str, ein Zeichen</span>
+<span class="sd">    returns: string k-mal die Zeichenfolge: Punkt, gefolgt vom Zeichen c</span>
+<span class="sd">    </span>
+<span class="sd">    &gt;&gt;&gt; func4(3,&#39;#&#39;)</span>
+<span class="sd">    .#.#.#</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="c1">#your code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Aufgabe 5:  </span>
+<span class="sd">Hinweis: der default-Wert ist der Wert, der angenommen wird, wenn für den Parameter kein Wert übergeben wird.</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="c1">#your code</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    k: int, k &gt; 0  </span>
+<span class="sd">    c: string, ein Zeichen mit default &#39;x&#39;</span>
+<span class="sd">    returns: string k-mal die Zeichenfolge: Punkt, gefolgt vom Zeichen c</span>
+<span class="sd">    </span>
+<span class="sd">    &gt;&gt;&gt; func5(3,&#39;#&#39;)</span>
+<span class="sd">    .#.#.#</span>
+
+<span class="sd">    &gt;&gt;&gt; func5(4)</span>
+<span class="sd">    &#39;.x.x.x.x&#39;</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="c1">#your code </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Aufgabe 6: Nutze mehrere return-Anweisungen</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="c1"># your code</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    x: int</span>
+<span class="sd">    returns &#39;A&#39; falls x &lt; 20</span>
+<span class="sd">            &#39;B&#39; falls 20 &lt;= x &lt; 30</span>
+<span class="sd">            &#39;C&#39; falls 30 &lt;= x</span>
+
+<span class="sd">    &gt;&gt;&gt; func6(15)</span>
+<span class="sd">    A</span>
+<span class="sd">    &gt;&gt;&gt; func6(25)</span>
+<span class="sd">    B</span>
+<span class="sd">    &gt;&gt;&gt; func6(35)</span>
+<span class="sd">    C</span>
+
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="c1">#your code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Aufgabe 7:  </span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="c1">#your code</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    a, b: ints</span>
+<span class="sd">    returns: Tupel aus a-b und a+b </span>
+<span class="sd">    &gt;&gt;&gt; x1, x2 = func7(10,1)</span>
+<span class="sd">    print(x1, x2)</span>
+<span class="sd">    9 11</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="c1">#your code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Aufgabe 8:  </span>
+<span class="sd">Erläutere am Beispiel die folgenden Begriffe:</span>
+<span class="sd">globale Variable, lokale Variable, Parameter, Argument</span>
+<span class="sd">Welchen Wert hat z am Ende des Programms?</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">10</span>       
+<span class="k">def</span> <span class="nf">doit</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="n">w</span> <span class="o">=</span> <span class="n">k</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="n">r</span>
+    <span class="k">return</span> <span class="n">w</span>
+
+<span class="n">z</span> <span class="o">=</span> <span class="n">doit</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="n">k</span>
+<span class="c1">#print(z)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Aufgabe 9:  </span>
+<span class="sd">Welchen Wert hat z am Ende des Programms?</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">10</span> 
+<span class="k">def</span> <span class="nf">doit</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">x</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="mi">7</span>
+    <span class="n">w</span> <span class="o">=</span> <span class="n">k</span> <span class="o">+</span> <span class="n">z</span>
+    <span class="k">return</span> <span class="n">w</span>
+
+<span class="n">z</span> <span class="o">=</span> <span class="n">doit</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="n">x</span>
+<span class="c1">#print(z) </span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -834,6 +1024,7 @@ zeichen(k, s)
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wie-wir-funktionen-schreiben">Wie wir Funktionen schreiben</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lokale-und-globale-variablen">Lokale und globale Variablen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung">Zusammenfassung</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aufgaben">Aufgaben</a></li>
 </ul>
   </nav></div>
 
