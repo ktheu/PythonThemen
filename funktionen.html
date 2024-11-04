@@ -377,10 +377,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funktionen-ohne-return">Funktionen ohne return</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funktionen-mit-return">Funktionen mit return</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funktionen-mit-parameter">Funktionen mit Parameter</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mehrere-werte-zuruckgeben">Mehrere Werte zurückgeben</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eine-funktion-ohne-parameter">Eine Funktion ohne Parameter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eine-funktionen-mit-einem-parameter">Eine Funktionen mit einem Parameter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ein-optionaler-parameter">Ein optionaler Parameter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameterliste">Parameterliste</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docstring">Docstring</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mehrere-return-anweisungen">Mehrere return-Anweisungen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funktionen-ohne-ruckgabewert">Funktionen ohne Rückgabewert</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mehrere-ruckgabewerte">Mehrere Rückgabewerte</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wie-wir-funktionen-schreiben">Wie wir Funktionen schreiben</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lokale-und-globale-variablen">Lokale und globale Variablen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung">Zusammenfassung</a></li>
@@ -398,61 +402,59 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="funktionen">
 <h1>Funktionen<a class="headerlink" href="#funktionen" title="Link to this heading">#</a></h1>
-<p><a class="reference external" href="https://youtu.be/5qvqujyl90Q">Video</a></p>
-<p>In Funktionen fassen wir Codeabschnitte, die eine definierte Aufgabe erfüllen, zu einer Einheit zusammen.
-Wir erstellen Funktionen weil</p>
-<ul class="simple">
-<li><p>wir einzelne Codeabschnitte besser testen können.</p></li>
-<li><p>mit sprechenden Funktionsnamen die Programme, in denen wir die Funktionen aufrufen, besser lesbar werden.</p></li>
-<li><p>wir die Codeabschnitte an anderen Stellen wiederverwenden können.</p></li>
-</ul>
-<p>Funktionen beginnen mit dem Schlüsselwort <strong>def</strong>. Sie haben</p>
-<ul class="simple">
-<li><p>einen Namen</p></li>
-<li><p>Parameter (0 oder mehr)</p></li>
-<li><p>einen Funktionsrumpf</p></li>
-<li><p>return Anweisungen (0 oder mehr)</p></li>
-</ul>
-<p>Manchmal haben Funktionen einen <em>docstring</em>, der beschreibt, wie sie anzuwenden sind.</p>
-<section id="funktionen-ohne-return">
-<h2>Funktionen ohne return<a class="headerlink" href="#funktionen-ohne-return" title="Link to this heading">#</a></h2>
-<p>Mit return können Funktionen Werte zurückgeben. Kommen wir im Funktionsrumpf an eine return-Anweisung, dann wird die Funktion sofort verlassen. Wird die Funktion nicht über eine return Anweisung verlassen, dann gibt sie <em>None</em> zurück.</p>
-<div class="cell docutils container">
+<p><a class="reference external" href="https://youtu.be/IqV7TBp3-gE?si=Ls5wNqKfym8A6qLE">Video</a></p>
+<p>In Funktionen fassen wir Codeabschnitte, die eine definierte Aufgabe erfüllen, zu einer Einheit zusammen.</p>
+<img src='bild1.png' width = '500'> <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># die Funktion tut etwas, aber sie gibt nichts zurück</span>
-<span class="k">def</span> <span class="nf">sterne</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;*****&#39;</span><span class="p">)</span>
-
-<span class="n">sterne</span><span class="p">()</span>                <span class="c1"># die Funktion wird </span>
-<span class="n">sterne</span><span class="p">()</span>                <span class="c1"># zweimal aufgerufen</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>*****
-*****
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calc</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="mi">3</span><span class="o">*</span><span class="n">z</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">z</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">sterne</span><span class="p">()</span>            <span class="c1"># der Rückgabewert der Funktion wird in der Variablen a gespeichert</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>                <span class="c1"># die Funktion hat None zurückgegeben</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">calc</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>*****
-None
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>19
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="funktionen-mit-return">
-<h2>Funktionen mit return<a class="headerlink" href="#funktionen-mit-return" title="Link to this heading">#</a></h2>
-<p>Der Standardfall: Das, was die Funktion berechnet, wird über das return-Statement zurückgegeben.</p>
+<p>Wir müssen das Ergebnis nicht in einer Variable auffangen, sondern können es auch sofort printen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">calc</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>19
+</pre></div>
+</div>
+</div>
+</div>
+<p>In Jupyter-Notebooks wird die Auswertung der letzten Zeile einer Zelle auch ohne print angezeigt.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">calc</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>19
+</pre></div>
+</div>
+</div>
+</div>
+<section id="eine-funktion-ohne-parameter">
+<h2>Eine Funktion ohne Parameter<a class="headerlink" href="#eine-funktion-ohne-parameter" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sterne</span><span class="p">():</span>
@@ -463,55 +465,133 @@ None
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">sterne</span><span class="p">()</span>           
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sterne</span><span class="p">()</span>                            
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>*****
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;*****&#39;
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="funktionen-mit-parameter">
-<h2>Funktionen mit Parameter<a class="headerlink" href="#funktionen-mit-parameter" title="Link to this heading">#</a></h2>
-<p>Das, was die Funktion für ihre Berechnung an Werten benötigt, teilen wir ihr über Parameter mit.
-Beim Aufruf der Funktion wird der Parameter durch einen konkreten Wert (das Argument) ersetzt.</p>
+<section id="eine-funktionen-mit-einem-parameter">
+<h2>Eine Funktionen mit einem Parameter<a class="headerlink" href="#eine-funktionen-mit-einem-parameter" title="Link to this heading">#</a></h2>
+<p>Beim Aufruf der Funktion wird der Parameter durch einen konkreten Wert (das Argument) ersetzt.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sterne</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>          <span class="c1"># k ist ein Parameter</span>
     <span class="k">return</span> <span class="n">k</span> <span class="o">*</span> <span class="s1">&#39;*&#39;</span>      
-
-<span class="n">b</span> <span class="o">=</span> <span class="n">sterne</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>           <span class="c1"># beim Aufruf wird der Parameter k durch das Argument 5 ersetzt.</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>*****
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sterne</span><span class="p">(</span><span class="n">k</span> <span class="o">=</span> <span class="mi">3</span><span class="p">):</span>       <span class="c1"># k ist optionaler Paramenter mit default 3 </span>
-    <span class="k">return</span> <span class="n">k</span> <span class="o">*</span> <span class="s1">&#39;*&#39;</span> 
-
-<span class="nb">print</span><span class="p">(</span><span class="n">sterne</span><span class="p">(</span><span class="mi">12</span><span class="p">))</span> 
-<span class="nb">print</span><span class="p">(</span><span class="n">sterne</span><span class="p">())</span>          <span class="c1"># k erhält den default-Wert 3</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sterne</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>************
-***
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;****************************************************************************************************&#39;
 </pre></div>
 </div>
 </div>
 </div>
+<p>Wenn die Funktion einen Parameter verlangt und wir übergeben beim Aufruf kein Argument, dann bekommen wir einen Fehler</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sterne</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">sterne</span><span class="p">()</span>
+
+<span class="ne">TypeError</span>: sterne() missing 1 required positional argument: &#39;k&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ein-optionaler-parameter">
+<h2>Ein optionaler Parameter<a class="headerlink" href="#ein-optionaler-parameter" title="Link to this heading">#</a></h2>
+<p>Ein optionaler Parameter ist ein Parameter, für den wir beim Aufruf nicht unbedingt ein Argument mitgeben müssen. Wenn wir kein Argument mitgeben, wird ein default-Wert genommen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sterne</span><span class="p">(</span><span class="n">k</span> <span class="o">=</span> <span class="mi">3</span><span class="p">):</span>       <span class="c1"># k ist optionaler Paramenter mit default 3 </span>
+    <span class="k">return</span> <span class="n">k</span> <span class="o">*</span> <span class="s1">&#39;*&#39;</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sterne</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;************&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sterne</span><span class="p">()</span>          <span class="c1"># k erhält den default-Wert 3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;***&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="parameterliste">
+<h2>Parameterliste<a class="headerlink" href="#parameterliste" title="Link to this heading">#</a></h2>
+<p>Wenn eine Funktion mehrere Parameter hat, nennt man die Reihe der Parameter <em>Parameterliste</em>. Optionale Parameter müssen immer am Ende der Parameterliste stehen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">zeichen</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="s1">&#39;*&#39;</span><span class="p">):</span>     
+    <span class="k">return</span> <span class="n">k</span> <span class="o">*</span> <span class="n">s</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeichen</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="s1">&#39;abi&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;abiabiabiabiabi&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeichen</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;********************&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="docstring">
+<h2>Docstring<a class="headerlink" href="#docstring" title="Link to this heading">#</a></h2>
 <p>Der <em>docstring</em> beschreibt die Anforderungen an die Eingabeparameter und was die Funktion zurückgibt.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -519,7 +599,7 @@ Beim Aufruf der Funktion wird der Parameter durch einen konkreten Wert (das Argu
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    k: positive ganze Zahl</span>
 <span class="sd">    s: String </span>
-<span class="sd">    returns: k mal den String</span>
+<span class="sd">    returns: k mal den String s</span>
 <span class="sd">    &#39;&#39;&#39;</span>
     <span class="k">return</span> <span class="n">k</span> <span class="o">*</span> <span class="n">s</span>
 </pre></div>
@@ -528,13 +608,12 @@ Beim Aufruf der Funktion wird der Parameter durch einen konkreten Wert (das Argu
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">zeichen</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;abi&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeichen</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;abi&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>abiabiabiabi
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;abiabiabiabi&#39;
 </pre></div>
 </div>
 </div>
@@ -552,40 +631,15 @@ Beim Aufruf der Funktion wird der Parameter durch einen konkreten Wert (das Argu
 zeichen(k, s)
     k: positive ganze Zahl
     s: String 
-    returns: k mal den String
+    returns: k mal den String s
 </pre></div>
 </div>
 </div>
 </div>
-<p>Enthält die Parameterliste einer Funktion optionale Parameter, dann müssen die am Ende der Parameterliste stehen.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">zeichen</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span><span class="s1">&#39;*&#39;</span><span class="p">):</span>    <span class="c1"># optionale Parameter am Ende der Parameterliste</span>
-<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">    k: positive ganze Zahl</span>
-<span class="sd">    s: String</span>
-<span class="sd">    returns: k mal den String</span>
-<span class="sd">    &#39;&#39;&#39;</span>
-    <span class="k">return</span> <span class="n">k</span> <span class="o">*</span> <span class="n">s</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="n">zeichen</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="s1">&#39;#*&#39;</span><span class="p">)</span>
-<span class="n">s2</span> <span class="o">=</span> <span class="n">zeichen</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#*#*#*#*#* ********************
-</pre></div>
-</div>
-</div>
-</div>
-<p>In einer Funktion kann es mehrere return Anweisungen geben, aber bei der ersten Ausführung von return wird die Funktion sofort verlassen.</p>
+</section>
+<section id="mehrere-return-anweisungen">
+<h2>Mehrere return-Anweisungen<a class="headerlink" href="#mehrere-return-anweisungen" title="Link to this heading">#</a></h2>
+<p>In einer Funktion kann es mehrere return Anweisungen geben. Die Funktion wird beim ersten Ausführen eines return statements verlassen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">temperatur</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
@@ -598,33 +652,75 @@ zeichen(k, s)
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">temperatur</span><span class="p">(</span><span class="mi">45</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temperatur</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>heiß
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;heiß&#39;
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="mehrere-werte-zuruckgeben">
-<h2>Mehrere Werte zurückgeben<a class="headerlink" href="#mehrere-werte-zuruckgeben" title="Link to this heading">#</a></h2>
-<p>Wir können mit Komma getrennt mehrere Werte zurückgeben.</p>
+<section id="funktionen-ohne-ruckgabewert">
+<h2>Funktionen ohne Rückgabewert<a class="headerlink" href="#funktionen-ohne-ruckgabewert" title="Link to this heading">#</a></h2>
+<p>Wird die Funktion nicht über eine return Anweisung verlassen, oder über ein return ohne Rückgabewert, dann gibt sie <em>None</em> zurück.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">teile</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>                  
-    <span class="k">return</span> <span class="n">a</span> <span class="o">//</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span>
-
-<span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">214</span><span class="p">,</span> <span class="mi">70</span>
-<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">teile</span><span class="p">(</span><span class="mi">214</span><span class="p">,</span> <span class="mi">70</span><span class="p">)</span>         
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1"> durch </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s1"> ist </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1"> Rest </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sterne</span><span class="p">():</span>           <span class="c1"># Diese Funktion tut etwas, aber sie gibt nichts zurück</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;*****&#39;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">sterne</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>214 durch 70 ist 3 Rest 4.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>*****
+None
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="mehrere-ruckgabewerte">
+<h2>Mehrere Rückgabewerte<a class="headerlink" href="#mehrere-ruckgabewerte" title="Link to this heading">#</a></h2>
+<p>Wir können mit Komma getrennt mehrere Werte zurückgeben. Was zurückgegeben wird ist ein Tupel, das wir beim Aufruf sofort unpacken können.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calc</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>                  
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">calc</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(12, 8)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">calc</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>        <span class="c1"># Aufruf mit unpacking</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12 8
 </pre></div>
 </div>
 </div>
@@ -648,6 +744,11 @@ zeichen(k, s)
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Der größte gemeinsame Teiler beider Zahlen ist </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
     
 <span class="n">ggt</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Der größte gemeinsame Teiler beider Zahlen ist 2.
 </pre></div>
 </div>
 </div>
@@ -684,18 +785,19 @@ zeichen(k, s)
 <p>Funktionen können auf globale Variablen lesend zugreifen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>      <span class="c1"># globale Variable</span>
-<span class="k">def</span> <span class="nf">doit</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">doit</span><span class="p">():</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
     <span class="k">return</span> <span class="n">y</span>
 
+<span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>          <span class="c1"># globale Variable</span>
 <span class="n">z</span> <span class="o">=</span> <span class="n">doit</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span> 
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10 12
 </pre></div>
 </div>
 </div>
@@ -703,21 +805,20 @@ zeichen(k, s)
 <p>Lokale Variablen verdecken gleichnamige globale Variablen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>       
-<span class="k">def</span> <span class="nf">doit</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">doit</span><span class="p">():</span>
     <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>  
     <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
     <span class="k">return</span> <span class="n">y</span>
 
+<span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>   
 <span class="n">z</span> <span class="o">=</span> <span class="n">doit</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span> 
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
-10
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10 7
 </pre></div>
 </div>
 </div>
@@ -725,18 +826,19 @@ zeichen(k, s)
 <p>Ein Parameter wirkt wie eine lokale Variable</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>       
-<span class="k">def</span> <span class="nf">doit</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">doit</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
     <span class="k">return</span> <span class="n">y</span>
 
+<span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>      
 <span class="n">z</span> <span class="o">=</span> <span class="n">doit</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">z</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10 7
 </pre></div>
 </div>
 </div>
@@ -744,18 +846,20 @@ zeichen(k, s)
 <p>Um eine globale Variable in einer Funktion zu verändern, müssen wir diese Variable als global deklarieren.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>       
-<span class="k">def</span> <span class="nf">doit</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">doit</span><span class="p">():</span>
     <span class="k">global</span> <span class="n">x</span>
     <span class="n">x</span> <span class="o">=</span> <span class="mi">7</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
+    
+<span class="n">x</span> <span class="o">=</span> <span class="mi">10</span> 
+<span class="n">z</span> <span class="o">=</span> <span class="n">doit</span><span class="p">()</span>  
 
-<span class="n">doit</span><span class="p">()</span>    
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">z</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7 9
 </pre></div>
 </div>
 </div>
@@ -773,6 +877,12 @@ zeichen(k, s)
 <li><p>Wenn wir innerhalb von Funktionen eine globale Variable ändern wollen, müssen wir sie in der Funktion mit dem Schlüsselwort <em>global</em> als global deklarieren.</p></li>
 <li><p>Wenn wir beim Durchlaufen einer Funktion auf ein return stoßen, wird die Funktion sofort verlassen.</p></li>
 <li><p>Mit return können wir mehrere Werte zurückgeben.</p></li>
+</ul>
+<p>Wir erstellen Funktionen weil</p>
+<ul class="simple">
+<li><p>wir einzelne Codeabschnitte besser testen können.</p></li>
+<li><p>mit sprechenden Funktionsnamen die Programme, in denen wir die Funktionen aufrufen, besser lesbar werden.</p></li>
+<li><p>wir die Codeabschnitte an anderen Stellen wiederverwenden können.</p></li>
 </ul>
 </section>
 <section id="aufgaben">
@@ -1027,10 +1137,14 @@ zeichen(k, s)
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funktionen-ohne-return">Funktionen ohne return</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funktionen-mit-return">Funktionen mit return</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funktionen-mit-parameter">Funktionen mit Parameter</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mehrere-werte-zuruckgeben">Mehrere Werte zurückgeben</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eine-funktion-ohne-parameter">Eine Funktion ohne Parameter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eine-funktionen-mit-einem-parameter">Eine Funktionen mit einem Parameter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ein-optionaler-parameter">Ein optionaler Parameter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameterliste">Parameterliste</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docstring">Docstring</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mehrere-return-anweisungen">Mehrere return-Anweisungen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funktionen-ohne-ruckgabewert">Funktionen ohne Rückgabewert</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mehrere-ruckgabewerte">Mehrere Rückgabewerte</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wie-wir-funktionen-schreiben">Wie wir Funktionen schreiben</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lokale-und-globale-variablen">Lokale und globale Variablen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zusammenfassung">Zusammenfassung</a></li>
