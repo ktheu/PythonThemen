@@ -4,6 +4,5 @@
 format: jb-book
 root: intro
 chapters:
-- file: dicts
-- file: funktionen
-
+  - file: funktionen
+  - file: dicts
