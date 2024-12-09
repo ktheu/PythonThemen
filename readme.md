@@ -21,6 +21,6 @@
 [Lösungen](https://github.com/ktheu/PythonThemen/blob/main/dicts/aufgaben_loes.pdf)
 
 
-- [Dictionaries](https://github.com/ktheu/PythonThemen/blob/main/sets/sets.ipynb) -
+- [Sets](https://github.com/ktheu/PythonThemen/blob/main/sets/sets.ipynb) -
 [Aufgaben](https://github.com/ktheu/PythonThemen/blob/main/sets/aufgaben.pdf) -
 [Lösungen](https://github.com/ktheu/PythonThemen/blob/main/sets/aufgaben_loes.pdf)
