@@ -1,0 +1,10 @@
+Wollen wir einen Computer für eine bestimmte Aufgabe einsetzen, dann
+müssen wir uns nicht nur überlegen, wie der Verarbeitungsablauf in Form eines
+Programms beschrieben werden kann. Es geht auch darum, das, was eigentlich
+verarbeitet werden soll, darzustellen. Informationen müssen in Form von Daten
+verpackt werden. Daten können alles Mögliche repräsentieren, von Zahlen und
+Texten über Bilder und Tönen bis zu Finanztransaktionen oder Auswertungen
+von Gesteinsproben. Da jedoch Computer intern nur mit den zwei Symbolen
+0 und 1 operieren, müssen wir uns überlegen, wie Informationen damit
+beschrieben werden können. Wie sieht eine Zahl aus, die nur aus Nullen und
+Einsen besteht – oder ein Text oder ein Bild?
