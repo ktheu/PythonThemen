@@ -1,4 +1,3 @@
-## Python Themen
 
 Eine Reihe von zusätzlichen Themen rund um Python.
 
