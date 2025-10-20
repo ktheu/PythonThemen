@@ -1,4 +1,0 @@
-3
-10  Lena
-20  Malte
-40  Sam

@@ -1,2 +1,0 @@
-Umlaute sind ä,ö,ü.
-Ein scharfes s ist ß.
