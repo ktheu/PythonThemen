@@ -1,0 +1,1 @@
+In Windows 10/11, you can install Python from the Microsoft Store. This is the easiest way to get started.
