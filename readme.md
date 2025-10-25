@@ -9,7 +9,7 @@ Eine Reihe von zusätzlichen Themen rund um Python.
 
 -----
 
-- [Was ist Python?](https://github.com/ktheu/PythonLernen/blob/main/grundlagen/00_wasIstPython.ipynb)
+- [Was ist Python?](https://github.com/ktheu/PythonThemen/blob/main/was_ist_python/wasIstPython.ipynb)
 
 - [Reguläre Ausdrücke](https://github.com/ktheu/PythonThemen/blob/main/regulaereAusdruecke/regulaereAusdruecke.ipynb) 
 
