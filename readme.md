@@ -24,6 +24,8 @@ Eine Reihe von zusätzlichen Themen rund um Python.
 - [Graphviz](https://github.com/ktheu/PythonThemen/blob/main/graphviz/graphviz.ipynb) - Graphen Visualisieren in Python
 
 - [Pathlib](https://github.com/ktheu/PythonThemen/blob/main/pathlib/pathlib.ipynb) - Arbeiten mit Dateipfaden in Python
+- 
+- [Modules](https://github.com/ktheu/PythonThemen/blob/main/modules/modules.ipynb) - Modules, Packages, Libraries 
 
 -------
 
