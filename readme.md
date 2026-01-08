@@ -29,6 +29,11 @@ Eine Reihe von zusätzlichen Themen rund um Python.
 
 -------
 
+- [ComThink](https://ktheu.github.io/comThink/)
+
+
+-------
+
 - [Jupyter Notebooks](https://github.com/ktheu/PythonThemen/blob/main/verschiedenes/jupyter.ipynb) - Einführung in dem Umgang mit Jupyter Notebooks
 
 - [Jupyter Debugger](https://youtu.be/Y1NIEuVZBps) - Verwenden des Debuggers in Jupyter Notebooks
