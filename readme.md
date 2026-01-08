@@ -29,8 +29,7 @@ Eine Reihe von zusätzlichen Themen rund um Python.
 
 -------
 
-- [ComThink](https://ktheu.github.io/comThink/)
-
+- [ComThink](https://ktheu.github.io/comThink/) - Fischer Technik STEM Coding Max
 
 -------
 
