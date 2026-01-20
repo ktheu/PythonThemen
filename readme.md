@@ -27,6 +27,8 @@ Eine Reihe von zusätzlichen Themen rund um Python.
 
 - [Modules](https://github.com/ktheu/PythonThemen/blob/main/modules/modules.ipynb) - Modules, Packages, Libraries 
 
+- [MiniZinc1](https://github.com/ktheu/PythonThemen/blob/main/minizinc/MiniZinc.ipynb) - [MiniZinc2](https://github.com/ktheu/PythonThemen/blob/main/minizinc/MiniZinc2.ipynb) - ILP, Constraint Programming mit Minizinc
+
 -------
 
 - [ComThink](https://ktheu.github.io/comThink/) - Fischer Technik STEM Coding Max
